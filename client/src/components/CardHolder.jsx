@@ -8,18 +8,16 @@ class CardHolder extends React.Component{
 
   cardClick(event){
     event.persist()
-    var swap = this.state.back;
-    this.props.click({front: this.state.back, back: this.state.front, id: this.state.id})
-    this.setState({back: this.state.front});
-    this.setState({front: swap})
+    this.props.click({front: this.state.front, back: this.state.back, id: this.state.id})
+    console.log(this.state)
   }
 
   render(){
     return(
       <div >
-        <img className='card' src={this.props.image} onClick={this.cardClick.bind(this)}></img>
+      <img className='card' src={this.props.image} onClick={this.cardClick.bind(this)}></img>
       </div>
-    )
+      )
   }
 }
 
